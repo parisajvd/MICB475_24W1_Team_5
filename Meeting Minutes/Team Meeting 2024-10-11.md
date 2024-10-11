@@ -17,7 +17,6 @@
 - google docs file for collaborating on proposal: https://docs.google.com/document/d/1aESWHjTN2cO4Zw7szx_nXRlyc-A9cc_rX5Cf7a7IMEU/edit?usp=sharing
 - alternative proposal is maybe not the most fitting for ours, the original proposal might be better
   - updates: USING ORIGINAL PROPOSAL RUBRIC INSTEAD OF THE ALTERNATIVE RUBRIC !! 
-- use a google document for better collaboration, jot down points/an outline for each section
 - finish writing draft potentially by Thursday and then Ritu can look at it and give us feedback before submitting, can add her to the Google document  
   - if it doesn't work, let her know in advance
 - Proposal:
@@ -32,12 +31,12 @@
     - final files: rep-seq, feature table or proposal
     - phylo tree and taxonomic classification after proposal
     - then modeling (after taxonomic classification): there is an R code in the papers, will run into every category, calculate alpha and beta diversity, give us p-value and then we need to decide
-    - when we mention dataset, cite the age group
-    - AIMS: 2 main ones
-      - 1. modeling
-        2. taxonomic analysis - subsections: diversity metrics (JUST STICK TO ONE EITHER TAXONOMIC OR FUNCTIONAL, BUT CAN CHANGE LATER)
-    - research question: which factors affect the microbiome
-    - approach: in form of table
+  - when we mention dataset, cite the age group
+  - AIMS: 2 main ones
+    - 1. modeling
+      2. taxonomic analysis - subsections: diversity metrics (JUST STICK TO ONE EITHER TAXONOMIC OR FUNCTIONAL, BUT CAN CHANGE LATER)
+  - research question: which factors affect the microbiome
+  - approach: in form of table
 - Next Steps:
   - modeling gives us p-value to find significant factors
   - depending on how many are significant, focus on those particular ones and focus taxonomic classification with just that particular variable
