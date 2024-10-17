@@ -6,3 +6,7 @@ proposal: https://docs.google.com/document/d/1aESWHjTN2cO4Zw7szx_nXRlyc-A9cc_rX5
  - help with the approach for the modeling (aim 1)
  - where to include metadata-based filtering, done in qiime2 or R?
  - do we need to specify which type of statistical testing we will use for our diversity metrics, and if so, would it be ANOVA (alpha) and PERMANOVA (beta)?
+
+## General Questions for the team
+- how to refer to these metadata categories? As "personal factors" "characteristics" etc?
+- Finalize a title for the proposal
