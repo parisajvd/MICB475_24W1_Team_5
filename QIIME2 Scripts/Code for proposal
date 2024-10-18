@@ -1,0 +1,156 @@
+###Importing dataset###
+cd data
+
+#make a new directory in data folder for only smoking data in uk
+mkdir smoking_uk
+
+#making a copy of smoking data related to uk to smoking_uk
+cp -r /mnt/datasets/project_2/smoking/uk_manifest.tsv /data/smoking_uk
+cp -r /mnt/datasets/project_2/smoking/uk_metadata.tsv /data/smoking_uk
+cp -r /mnt/datasets/project_2/smoking/uk_seqs /data/smoking_uk
+
+# import data using manifest file, working directory /data/smoking_uk
+#first I got an error, so had to use https://keemei.qiime2.org/ to change the column name "sample-alias" to "sample-id" to be able to read it with qiime2.
+
+#move to local computer
+scp root@10.19.139.184:/data/smoking_uk/uk_manifest.tsv .
+
+###Manifest file modifications###
+
+#changed column "sample-alias" to "sample-id" using keemei. saved file as uk_manifest_new.tsv.
+#move file to server
+scp uk_manifest_new.tsv root@serverid:/data/smoking_uk
+
+#now try importing again using uk_manifest_edited.tsv
+qiime tools import \
+  --type "SampleData[SequencesWithQuality]" \
+  --input-format SingleEndFastqManifestPhred33V2 \
+  --input-path /data/smoking_uk/uk_manifest_edited.tsv \
+  --output-path /data/smoking_uk/demux_seqs.qza
+
+#Error that we're getting now:
+There was a problem importing /data/smoking_uk/uk_manifest_edited.tsv:
+
+  /data/smoking_uk/uk_manifest_edited.tsv is not a(n) SingleEndFastqManifestPhred33V2 file:
+
+  'absolute-filepath' is not a column in the metadata. Available columns: 'forward-absolute-filepath', 'reverse-absolute-filepath'
+
+#it seems like this data is paired end? and we need to use type SampleData[PairedEndSequencesWithQuality] and input PairedEndFastqManifestPhred33V2 instead
+
+#This can run! however, we have to make sure to edit the manifest file a bit. did this in R + got help for finding error from Keemei*(1)
+#1 we have to change the name of columns to "sample-id", "forward-absolute-filepath", "reverse-absolute-filepath". it shouldn't have ".", it should have "-"
+#2 the "forward-absolute-filepath", "reverse-absolute-filepath" entries should have the file path uk_seqs of your working directory. in our case:/data/smoking_uk/uk_seqs 
+#3 somehow the manifest file was missing the ".gz" extension for the entries of "forward-absolute-filepath", "reverse-absolute-filepath" columns.
+###See R script file (fixing the manifest file) script. Need to move form local computer to server
+
+scp uk_manifest_latest.tsv root@10.19.139.184:/data/smoking_uk
+
+###Importing and Demultiplezing###
+qiime tools import \
+  --type "SampleData[PairedEndSequencesWithQuality]" \
+  --input-format PairedEndFastqManifestPhred33V2 \
+  --input-path /data/smoking_uk/uk_manifest_latest.tsv \
+  --output-path /data/smoking_uk/demux_seqs.qza
+
+# Create visualization of demultiplexed samples
+qiime demux summarize \
+  --i-data demux_seqs.qza \
+  --o-visualization demux_seqs.qzv
+
+scp root@10.19.139.184:/data/smoking_uk/demux_seqs.qzv .
+#look at the demux_seqs.qzv file on view.qiime2.org and see what your trimming needs to be.
+
+###Denoise using DADA2###
+#need to use it for paired-end reads
+#Took around 8 hours to run
+qiime dada2 denoise-paired \
+  --i-demultiplexed-seqs demux_seqs.qza \
+  --p-trim-left-f 0 \
+  --p-trim-left-r 0 \
+  --p-trunc-len-f 220 \
+  --p-trunc-len-r 190 \
+  --o-representative-sequences rep-seqs.qza \
+  --o-table table.qza \
+  --o-denoising-stats stats.qza
+
+# Visualize DADA2 stats
+qiime metadata tabulate \
+  --m-input-file stats.qza \
+  --o-visualization stats.qzv
+
+# Visualize ASVs stats
+qiime feature-table summarize \
+  --i-table table.qza \
+  --o-visualization table.qzv \
+  --m-sample-metadata-file /data/smoking_uk/uk_metadata.tsv
+  
+qiime feature-table tabulate-seqs \
+  --i-data rep-seqs.qza \
+  --o-visualization rep-seqs.qzv
+
+#move table.qzv and rep-seqs.qzv file to local computer to be able to visualize them on view.qiime2.org
+scp root@10.19.139.184:/data/smoking_uk/table.qzv .
+scp root@10.19.139.184:/data/smoking_uk/rep-seqs.qzv .
+
+###Training with SILVA classifier and taxonomy classification###
+
+#Train with SILVA. We know that our data is amplified from Variale region 4, so the silva-138-99-515-806-nb-classifier.qza should work for it
+#ran on detached screen named SILVA. Took around 1 hr to run
+qiime feature-classifier classify-sklearn \
+  --i-classifier /mnt/datasets/classifiers/silva-138-99-515-806-nb-classifier.qza \
+  --i-reads rep-seqs.qza \
+  --o-classification taxonomy.qza
+
+#visualize taxonomy.qza file
+qiime metadata tabulate \
+  --m-input-file taxonomy.qza \
+  --o-visualization taxonomy.qzv
+  
+# Taxonomy barplots
+qiime taxa barplot \
+  --i-table table.qza \
+  --i-taxonomy taxonomy.qza \
+  --m-metadata-file /data/smoking_uk/uk_metadata.tsv \
+  --o-visualization taxa-bar-plots.qzv
+
+#filtering out mitochondria and chloroplast sequences
+qiime taxa filter-table \
+  --i-table table.qza \
+  --i-taxonomy taxonomy.qza \
+  --p-exclude mitochondria,chloroplast \
+  --o-filtered-table table-no-mitochondria-no-chloroplast.qza
+
+#visualize table-no-mitochondria-no-chloroplast.qza file
+qiime feature-table summarize \
+  --i-table table-no-mitochondria-no-chloroplast.qza \
+  --o-visualization table-no-mitochondria-no-chloroplast.qzv \
+  --m-sample-metadata-file /data/smoking_uk/uk_metadata.tsv
+
+#move taxonomy, taxa-bar-plot, table-no-mitochondria.... file to local computer to be able to visualize them on view.qiime2.org
+scp root@10.19.139.184:/data/smoking_uk/taxonomy.qzv .
+scp root@10.19.139.184:/data/smoking_uk/taxa-bar-plots.qzv .
+scp root@10.19.139.184:/data/smoking_uk/table-no-mitochondria-no-chloroplast.qzv .
+
+###Phylogenetic analysis and alpha rarefication###
+
+# Generate a tree for phylogenetic diversity analysis
+qiime phylogeny align-to-tree-mafft-fasttree \
+  --i-sequences rep-seqs.qza \
+  --o-alignment aligned-rep-seqs.qza \
+  --o-masked-alignment masked-aligned-rep-seqs.qza \
+  --o-tree unrooted-tree.qza \
+  --o-rooted-tree rooted-tree.qza
+
+# Alpha-rarefaction
+qiime diversity alpha-rarefaction \
+  --i-table table-no-mitochondria-no-chloroplast.qza \
+  --i-phylogeny rooted-tree.qza \
+  --p-max-depth 94000 \
+  --m-metadata-file /data/smoking_uk/uk_metadata.tsv \
+  --o-visualization alpha-rarefaction.qzv 
+
+#move alpha-rarefication.qzv to local computer and view on qimme2 viewer
+scp root@10.19.139.184:/data/smoking_uk/alpha-rarefaction.qzv .
+
+###Resources### 
+#*(1) Keemei: cloud-based validation of tabular bioinformatics file formats in Google Sheets. Rideout JR, Chase JH, Bolyen E, Ackermann G, González A, Knight R, Caporaso JG. GigaScience. 2016;5:27. http://dx.doi.org/10.1186/s13742-016-0133-6
