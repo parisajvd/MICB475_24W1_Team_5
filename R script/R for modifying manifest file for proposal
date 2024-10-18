@@ -1,5 +1,3 @@
-#change the column name sample-alias to sample-id manually, then moved to R
-
 # Load necessary library
 library(dplyr)
 
@@ -19,11 +17,14 @@ manifest$reverse.absolute.filepath <- gsub(
   x = manifest$reverse.absolute.filepath
 )
 
+#Add the missing".qz" extension to the data in forward.absolute.filepath and reverse.absolute.filepath
 manifest <- manifest |>
   mutate(forward.absolute.filepath = paste0(forward.absolute.filepath, ".gz"),
          reverse.absolute.filepath = paste0(reverse.absolute.filepath, ".gz"))
 
+#Change column names. Based on an error in qiime2, the columns shouldn't include"." and should only have "-" in the names.
+#need to change "sample-alias" to "sample-id" to be able to read it in qiime
 colnames(manifest) <- c("sample-id", "forward-absolute-filepath", "reverse-absolute-filepath")
 
-# Write the modified manifest back to a file
+# Write the modified manifest back to a .tsv file
 write.table(manifest, file = "uk_manifest_latest.tsv", sep = "\t", row.names = FALSE, quote = FALSE)
