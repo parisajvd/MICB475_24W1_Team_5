@@ -1,0 +1,29 @@
+#change the column name sample-alias to sample-id manually, then moved to R
+
+# Load necessary library
+library(dplyr)
+
+# Read the tab-separated manifest file
+manifest <- read.delim("uk_manifest_edited.tsv", stringsAsFactors = FALSE)
+
+# Replace the paths in the relevant columns
+manifest$forward.absolute.filepath <- gsub(
+  pattern = "/mnt/datasets/project_2/smoking/uk_seqs/",
+  replacement = "/data/smoking_uk/uk_seqs/",
+  x = manifest$forward.absolute.filepath
+)
+
+manifest$reverse.absolute.filepath <- gsub(
+  pattern = "/mnt/datasets/project_2/smoking/uk_seqs/",
+  replacement = "/data/smoking_uk/uk_seqs/",
+  x = manifest$reverse.absolute.filepath
+)
+
+manifest <- manifest |>
+  mutate(forward.absolute.filepath = paste0(forward.absolute.filepath, ".gz"),
+         reverse.absolute.filepath = paste0(reverse.absolute.filepath, ".gz"))
+
+colnames(manifest) <- c("sample-id", "forward-absolute-filepath", "reverse-absolute-filepath")
+
+# Write the modified manifest back to a file
+write.table(manifest, file = "uk_manifest_latest.tsv", sep = "\t", row.names = FALSE, quote = FALSE)
