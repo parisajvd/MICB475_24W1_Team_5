@@ -29,11 +29,11 @@ qiime tools import \
   --output-path /data/smoking_uk/demux_seqs.qza
 
 #Error that we're getting now:
-There was a problem importing /data/smoking_uk/uk_manifest_edited.tsv:
+#There was a problem importing /data/smoking_uk/uk_manifest_edited.tsv:
 
-  /data/smoking_uk/uk_manifest_edited.tsv is not a(n) SingleEndFastqManifestPhred33V2 file:
+#  /data/smoking_uk/uk_manifest_edited.tsv is not a(n) SingleEndFastqManifestPhred33V2 file:
 
-  'absolute-filepath' is not a column in the metadata. Available columns: 'forward-absolute-filepath', 'reverse-absolute-filepath'
+#  'absolute-filepath' is not a column in the metadata. Available columns: 'forward-absolute-filepath', 'reverse-absolute-filepath'
 
 #it seems like this data is paired end? and we need to use type SampleData[PairedEndSequencesWithQuality] and input PairedEndFastqManifestPhred33V2 instead
 
@@ -94,8 +94,10 @@ scp root@10.19.139.184:/data/smoking_uk/rep-seqs.qzv .
 
 ###Training with SILVA classifier and taxonomy classification###
 
-#Train with SILVA. We know that our data is amplified from Variale region 4, so the silva-138-99-515-806-nb-classifier.qza should work for it
+#Train with SILVA. We know that our data is amplified from Variable region 4, so the silva-138-99-515-806-nb-classifier.qza should work for it
 #ran on detached screen named SILVA. Took around 1 hr to run
+screen -S SILVA
+
 qiime feature-classifier classify-sklearn \
   --i-classifier /mnt/datasets/classifiers/silva-138-99-515-806-nb-classifier.qza \
   --i-reads rep-seqs.qza \
@@ -142,6 +144,7 @@ qiime phylogeny align-to-tree-mafft-fasttree \
   --o-rooted-tree rooted-tree.qza
 
 # Alpha-rarefaction
+#chose 94000 as our max depth by looking at taxonomy.qza file with qiime viewer
 qiime diversity alpha-rarefaction \
   --i-table table-no-mitochondria-no-chloroplast.qza \
   --i-phylogeny rooted-tree.qza \
@@ -150,6 +153,7 @@ qiime diversity alpha-rarefaction \
   --o-visualization alpha-rarefaction.qzv 
 
 #move alpha-rarefication.qzv to local computer and view on qimme2 viewer
+#see what rarefication depth/sampling depth we might want to use (will revise this after modelling)
 scp root@10.19.139.184:/data/smoking_uk/alpha-rarefaction.qzv .
 
 ###Resources### 
