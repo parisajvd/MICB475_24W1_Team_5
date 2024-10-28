@@ -1,0 +1,91 @@
+sample-id	Person	DNA_RNA	SampleType	SampleTypeNumber	Group	Age	Race	Gender	Diet	Ecig	Ecig_Conc_mg	Ecig_Vol_PerDay_mL	Ecig_Freq	Ecig_YearsUsing	Tobacco	Tcig_Day	Nicotine	Marijuana	Marijuana_PerWeek	Alcohol	Alcohol_PerWeek	Antibiotics_Last6mo	Antibiotic_dose_type	CO_ppm	CO_percent	FNTD	Height	Weight	BMI
+Stewart.CO10spitDNA.Project12.Integrated	Con10	Con10	Saliva	2	Con	42	White	Male	Meat	No	NA	NA	NA	NA	No	NA	None	No	NA	Yes	2	No	NA	3	1.1	0	6ft1	205	27
+Stewart.CO10stoolDNA.Project12.Integrated	Con10	Con10	Feces	3	Con	44	White	Male	Meat	No	NA	NA	NA	NA	No	NA	None	No	NA	Yes	4	No	NA	3	1.1	0	6ft1	205	27
+Stewart.CO10swabDNA.Project12.Integrated	Con10	Con10	Buccal Swab	1	Con	46	White	Male	Meat	No	NA	NA	NA	NA	No	NA	None	No	NA	Yes	6	No	NA	3	1.1	0	6ft1	205	27
+Stewart.CO1spitDNA.Project10	Con1	Con1	Saliva	2	Con	37	White	Male	Vegetarian	No	NA	NA	NA	NA	No	NA	None	No	NA	Yes	1	No	NA	1	0.8	0	6ft0	160	21.7
+Stewart.CO1stoolDNA.Project10	Con1	Con1	Feces	3	Con	37	White	Male	Vegetarian	No	NA	NA	NA	NA	No	NA	None	No	NA	Yes	1	No	NA	1	0.8	0	6ft0	160	21.7
+Stewart.CO1swabDNA.Project10	Con1	Con1	Buccal Swab	1	Con	37	White	Male	Vegetarian	No	NA	NA	NA	NA	No	NA	None	No	NA	Yes	1	No	NA	1	0.8	0	6ft0	160	21.7
+Stewart.CO2spitDNA.Project10	Con2	Con2	Saliva	2	Con	27	White	Male	Meat	No	NA	NA	NA	NA	No	NA	None	No	NA	Yes	1	No	NA	2	1	0	5ft10	156	22.4
+Stewart.CO2stoolDNA.Project10	Con2	Con2	Feces	3	Con	27	White	Male	Meat	No	NA	NA	NA	NA	No	NA	None	No	NA	Yes	1	No	NA	2	1	0	5ft10	156	22.4
+Stewart.CO2swabDNA.Project10	Con2	Con2	Buccal Swab	1	Con	27	White	Male	Meat	No	NA	NA	NA	NA	No	NA	None	No	NA	Yes	1	No	NA	2	1	0	5ft10	156	22.4
+Stewart.CO3spitDNA.Project10	Con3	Con3	Saliva	2	Con	26	White	Female	Meat	No	NA	NA	NA	NA	No	NA	None	No	NA	No	NA	No	NA	1	0.8	0	5ft4	100	17.2
+Stewart.CO3stoolDNA.Project10	Con3	Con3	Feces	3	Con	26	White	Female	Meat	No	NA	NA	NA	NA	No	NA	None	No	NA	No	NA	No	NA	1	0.8	0	5ft4	100	17.2
+Stewart.CO3swabDNA.Project10	Con3	Con3	Buccal Swab	1	Con	26	White	Female	Meat	No	NA	NA	NA	NA	No	NA	None	No	NA	No	NA	No	NA	1	0.8	0	5ft4	100	17.2
+Stewart.CO4spitDNA.Project10	Con4	Con4	Saliva	2	Con	28	Asian	Male	Meat	No	NA	NA	NA	NA	No	NA	None	No	NA	Yes	2	No	NA	2	1	0	5ft7	165	25.8
+Stewart.CO4stoolDNA.Project10	Con4	Con4	Feces	3	Con	28	Asian	Male	Meat	No	NA	NA	NA	NA	No	NA	None	No	NA	Yes	2	No	NA	2	1	0	5ft7	165	25.8
+Stewart.CO4swabDNA.Project10	Con4	Con4	Buccal Swab	1	Con	28	Asian	Male	Meat	No	NA	NA	NA	NA	No	NA	None	No	NA	Yes	2	No	NA	2	1	0	5ft7	165	25.8
+Stewart.CO5spitDNA.Project10	Con5	Con5	Saliva	2	Con	28	White	Male	Meat	No	NA	NA	NA	NA	No	NA	None	No	NA	Yes	2	No	NA	2	1	0	5ft11	175	24.4
+Stewart.CO5stoolDNA.Project10	Con5	Con5	Feces	3	Con	28	White	Male	Meat	No	NA	NA	NA	NA	No	NA	None	No	NA	Yes	2	No	NA	2	1	0	5ft11	175	24.4
+Stewart.CO5swabDNA.Project10	Con5	Con5	Buccal Swab	1	Con	28	White	Male	Meat	No	NA	NA	NA	NA	No	NA	None	No	NA	Yes	2	No	NA	2	1	0	5ft11	175	24.4
+Stewart.CO6spitDNA.Project10	Con6	Con6	Saliva	2	Con	35	Hispanic	Male	Meat	No	NA	NA	NA	NA	No	NA	None	No	NA	Yes	1	No	NA	1	0.8	0	6ft1	180	23.7
+Stewart.CO6stoolDNA.Project10	Con6	Con6	Feces	3	Con	35	Hispanic	Male	Meat	No	NA	NA	NA	NA	No	NA	None	No	NA	Yes	1	No	NA	1	0.8	0	6ft1	180	23.7
+Stewart.CO6swabDNA.Project10	Con6	Con6	Buccal Swab	1	Con	35	Hispanic	Male	Meat	No	NA	NA	NA	NA	No	NA	None	No	NA	Yes	1	No	NA	1	0.8	0	6ft1	180	23.7
+Stewart.CO7spitDNA.Project10	Con7	Con7	Saliva	2	Con	29	Asian	Male	Meat	No	NA	NA	NA	NA	No	NA	None	No	NA	Yes	1	No	NA	1	0.8	0	5ft7	146	22.9
+Stewart.CO7stoolDNA.Project10	Con7	Con7	Feces	3	Con	29	Asian	Male	Meat	No	NA	NA	NA	NA	No	NA	None	No	NA	Yes	1	No	NA	1	0.8	0	5ft7	146	22.9
+Stewart.CO7swabDNA.Project10	Con7	Con7	Buccal Swab	1	Con	29	Asian	Male	Meat	No	NA	NA	NA	NA	No	NA	None	No	NA	Yes	1	No	NA	1	0.8	0	5ft7	146	22.9
+Stewart.CO8spitDNA.Project10	Con8	Con8	Saliva	2	Con	32	Asian	Male	Meat	No	NA	NA	NA	NA	No	NA	None	No	NA	Yes	3	No	NA	1	0.8	0	5ft9	160	23.6
+Stewart.CO8stoolDNA.Project10	Con8	Con8	Feces	3	Con	32	Asian	Male	Meat	No	NA	NA	NA	NA	No	NA	None	No	NA	Yes	3	No	NA	1	0.8	0	5ft9	160	23.6
+Stewart.CO8swabDNA.Project10	Con8	Con8	Buccal Swab	1	Con	32	Asian	Male	Meat	No	NA	NA	NA	NA	No	NA	None	No	NA	Yes	3	No	NA	1	0.8	0	5ft9	160	23.6
+Stewart.CO9spitDNA.Project10	Con9	Con9	Saliva	2	Con	36	White	Male	Meat	No	NA	NA	NA	NA	No	NA	None	No	NA	Yes	5	No	NA	1	0.8	0	5ft10	165	23.7
+Stewart.CO9stoolDNA.Project10	Con9	Con9	Feces	3	Con	36	White	Male	Meat	No	NA	NA	NA	NA	No	NA	None	No	NA	Yes	5	No	NA	1	0.8	0	5ft10	165	23.7
+Stewart.CO9swabDNA.Project10	Con9	Con9	Buccal Swab	1	Con	36	White	Male	Meat	No	NA	NA	NA	NA	No	NA	None	No	NA	Yes	5	No	NA	1	0.8	0	5ft10	165	23.7
+Stewart.EC10spitDNA.Project12.Integrated	EC10	EC10	Saliva	2	EC	40	White	Male	Meat	Yes	18	15	Daily	6	No	NA	High	No	NA	No	NA	No	NA	3	1	0	6ft2	210	27
+Stewart.EC10stoolDNA.Project12.Integrated	EC10	EC10	Feces	3	EC	40	White	Male	Meat	Yes	18	15	Daily	6	No	NA	High	No	NA	No	NA	No	NA	3	1	0	6ft2	210	27
+Stewart.EC10swabDNA.Project12.Integrated	EC10	EC10	Buccal Swab	1	EC	40	White	Male	Meat	Yes	18	15	Daily	6	No	NA	High	No	NA	No	NA	No	NA	3	1	0	6ft2	210	27
+Stewart.EC11spitDNA.Project12.Integrated	EC11	EC11	Saliva	2	EC	25	White	Male	Meat	Yes	12	20	Daily	0.5	No	NA	High	No	NA	No	NA	No	NA	2	1	0	5ft10	155	22.2
+Stewart.EC11stoolDNA.Project12.Integrated	EC11	EC11	Feces	3	EC	25	White	Male	Meat	Yes	12	20	Daily	0.5	No	NA	High	No	NA	No	NA	No	NA	2	1	0	5ft10	155	22.2
+Stewart.EC11swabDNA.Project12.Integrated	EC11	EC11	Buccal Swab	1	EC	25	White	Male	Meat	Yes	12	20	Daily	0.5	No	NA	High	No	NA	No	NA	No	NA	2	1	0	5ft10	155	22.2
+Stewart.EC1spitDNA.Pool264	EC1	EC1	Saliva	2	EC	22	White	Male	Vegan	Yes	3	2	Daily	2	No	NA	Low	No	NA	Yes	1	No	NA	5	1.4	0	5ft9	170	25.1
+Stewart.EC1stoolDNA.Pool264	EC1	EC1	Feces	3	EC	22	White	Male	Vegan	Yes	3	2	Daily	2	No	NA	Low	No	NA	Yes	1	No	NA	5	1.4	0	5ft9	170	25.1
+Stewart.EC1swabDNA.Pool264	EC1	EC1	Buccal Swab	1	EC	22	White	Male	Vegan	Yes	3	2	Daily	2	No	NA	Low	No	NA	Yes	1	No	NA	5	1.4	0	5ft9	170	25.1
+Stewart.EC2spitDNA.Pool264	EC2	EC2	Saliva	2	EC	19	Hispanic	Male	Meat	Yes	9	2	Daily	4	No	NA	Low	Yes	7	Yes	1	No	NA	4	1.2	0	5ft10	180	25.8
+Stewart.EC2stoolDNA.Pool264	EC2	EC2	Feces	3	EC	19	Hispanic	Male	Meat	Yes	9	2	Daily	4	No	NA	Low	Yes	7	Yes	1	No	NA	4	1.2	0	5ft10	180	25.8
+Stewart.EC2swabDNA.Pool264	EC2	EC2	Buccal Swab	1	EC	19	Hispanic	Male	Meat	Yes	9	2	Daily	4	No	NA	Low	Yes	7	Yes	1	No	NA	4	1.2	0	5ft10	180	25.8
+Stewart.EC3spitDNA.Pool264	EC3	EC3	Saliva	2	EC	46	Asian	Male	Meat	Yes	3	2	Daily	3	No	NA	Low	No	NA	Yes	7	No	NA	3	1.1	0	5ft6	175	28.2
+Stewart.EC3stoolDNA.Pool264	EC3	EC3	Feces	3	EC	46	Asian	Male	Meat	Yes	3	2	Daily	3	No	NA	Low	No	NA	Yes	7	No	NA	3	1.1	0	5ft6	175	28.2
+Stewart.EC3swabDNA.Pool264	EC3	EC3	Buccal Swab	1	EC	46	Asian	Male	Meat	Yes	3	2	Daily	3	No	NA	Low	No	NA	Yes	7	No	NA	3	1.1	0	5ft6	175	28.2
+Stewart.EC4spitDNA.Pool264	EC4	EC4	Saliva	2	EC	30	White	Male	Meat	Yes	20	5	Daily	3	No	NA	Low	No	NA	Yes	2	No	NA	3	1.1	0	5ft9	163	24.1
+Stewart.EC4stoolDNA.Pool264	EC4	EC4	Feces	3	EC	30	White	Male	Meat	Yes	20	5	Daily	3	No	NA	Low	No	NA	Yes	2	No	NA	3	1.1	0	5ft9	163	24.1
+Stewart.EC4swabDNA.Pool264	EC4	EC4	Buccal Swab	1	EC	30	White	Male	Meat	Yes	20	5	Daily	3	No	NA	Low	No	NA	Yes	2	No	NA	3	1.1	0	5ft9	163	24.1
+Stewart.EC6spitDNA.Pool264	EC6	EC6	Saliva	2	EC	23	White	Female	Meat	Yes	6	6	Daily	1	No	NA	Low	No	NA	Yes	3	No	NA	1	0.8	0	5ft0	94	18.4
+Stewart.EC6stoolDNA.Pool264	EC6	EC6	Feces	3	EC	23	White	Female	Meat	Yes	6	6	Daily	1	No	NA	Low	No	NA	Yes	3	No	NA	1	0.8	0	5ft0	94	18.4
+Stewart.EC6swabDNA.Pool264	EC6	EC6	Buccal Swab	1	EC	23	White	Female	Meat	Yes	6	6	Daily	1	No	NA	Low	No	NA	Yes	3	No	NA	1	0.8	0	5ft0	94	18.4
+Stewart.EC7spitDNA.Project10	EC7	EC7	Saliva	2	EC	32	White	Male	Meat	Yes	6	10	Daily	4	Yes	0.15	Low	No	NA	No	NA	No	NA	5	1.3	0	6ft1	175	23.1
+Stewart.EC7stoolDNA.Project10	EC7	EC7	Feces	3	EC	32	White	Male	Meat	Yes	6	10	Daily	4	Yes	0.15	Low	No	NA	No	NA	No	NA	5	1.3	0	6ft1	175	23.1
+Stewart.EC7swabDNA.Project10	EC7	EC7	Buccal Swab	1	EC	32	White	Male	Meat	Yes	6	10	Daily	4	Yes	0.15	Low	No	NA	No	NA	No	NA	5	1.3	0	6ft1	175	23.1
+Stewart.EC8spitDNA.Project10	EC8	EC8	Saliva	2	EC	27	Hispanic	Male	Meat	Yes	10	20	Daily	1.5	No	NA	High	Yes	0.1	No	NA	No	NA	3	1.1	0	5ft8	255	38.8
+Stewart.EC8stoolDNA.Project10	EC8	EC8	Feces	3	EC	27	Hispanic	Male	Meat	Yes	10	20	Daily	1.5	No	NA	High	Yes	0.1	No	NA	No	NA	3	1.1	0	5ft8	255	38.8
+Stewart.EC8swabDNA.Project10	EC8	EC8	Buccal Swab	1	EC	27	Hispanic	Male	Meat	Yes	10	20	Daily	1.5	No	NA	High	Yes	0.1	No	NA	No	NA	3	1.1	0	5ft8	255	38.8
+Stewart.EC9spitDNA.Project10	EC9	EC9	Saliva	2	EC	38	White	Male	Meat	Yes	8	25	Daily	2	No	NA	Low	No	NA	No	NA	No	NA	3	1.1	0	6ft1	155	20.4
+Stewart.EC9stoolDNA.Project10	EC9	EC9	Feces	3	EC	38	White	Male	Meat	Yes	8	25	Daily	2	No	NA	Low	No	NA	No	NA	No	NA	3	1.1	0	6ft1	155	20.4
+Stewart.EC9swabDNA.Project10	EC9	EC9	Buccal Swab	1	EC	38	White	Male	Meat	Yes	8	25	Daily	2	No	NA	Low	No	NA	No	NA	No	NA	3	1.1	0	6ft1	155	20.4
+Stewart.TS10spitDNA.Project12.Integrated	TS10	TS10	Saliva	2	TS	36	Hispanic	Male	Meat	No	NA	NA	NA	NA	Yes	10	High	No	NA	No	NA	No	NA	2	1	6	5ft10	200	28.7
+Stewart.TS10stoolDNA.Project12.Integrated	TS10	TS10	Feces	3	TS	36	Hispanic	Male	Meat	No	NA	NA	NA	NA	Yes	10	High	No	NA	No	NA	No	NA	2	1	6	5ft10	200	28.7
+Stewart.TS10swabDNA.Project12.Integrated	TS10	TS10	Buccal Swab	1	TS	36	Hispanic	Male	Meat	No	NA	NA	NA	NA	Yes	10	High	No	NA	No	NA	No	NA	2	1	6	5ft10	200	28.7
+Stewart.TS11spitDNA.Project12.Integrated	TS11	TS11	Saliva	2	TS	51	White	Male	Meat	No	NA	NA	NA	NA	Yes	25	High	Yes	2	Yes	0.5	No	NA	26	4.8	6	5ft9	140	20.7
+Stewart.TS11stoolDNA.Project12.Integrated	TS11	TS11	Feces	3	TS	51	White	Male	Meat	No	NA	NA	NA	NA	Yes	25	High	Yes	2	Yes	0.5	No	NA	26	4.8	6	5ft9	140	20.7
+Stewart.TS11swabDNA.Project12.Integrated	TS11	TS11	Buccal Swab	1	TS	51	White	Male	Meat	No	NA	NA	NA	NA	Yes	25	High	Yes	2	Yes	0.5	No	NA	26	4.8	6	5ft9	140	20.7
+Stewart.TS12spitDNA.Project12.Integrated	TS12	TS12	Saliva	2	TS	40	Black	Male	Meat	No	NA	NA	NA	NA	Yes	20	High	No	NA	Yes	0.5	No	NA	31	5.6	6	5ft9	150	22.1
+Stewart.TS12stoolDNA.Project12.Integrated	TS12	TS12	Feces	3	TS	40	Black	Male	Meat	No	NA	NA	NA	NA	Yes	20	High	No	NA	Yes	0.5	No	NA	31	5.6	6	5ft9	150	22.1
+Stewart.TS12swabDNA.Project12.Integrated	TS12	TS12	Buccal Swab	1	TS	40	Black	Male	Meat	No	NA	NA	NA	NA	Yes	20	High	No	NA	Yes	0.5	No	NA	31	5.6	6	5ft9	150	22.1
+Stewart.TS1spitDNA.Pool264	TS1	TS1	Saliva	2	TS	30	White	Male	Meat	No	NA	NA	NA	NA	Yes	10	High	No	NA	No	NA	No	NA	33	5.9	4	6ft0	187	25.4
+Stewart.TS1stoolDNA.Pool264	TS1	TS1	Feces	3	TS	30	White	Male	Meat	No	NA	NA	NA	NA	Yes	10	High	No	NA	No	NA	No	NA	33	5.9	4	6ft0	187	25.4
+Stewart.TS1swabDNA.Pool264	TS1	TS1	Buccal Swab	1	TS	30	White	Male	Meat	No	NA	NA	NA	NA	Yes	10	High	No	NA	No	NA	No	NA	33	5.9	4	6ft0	187	25.4
+Stewart.TS2spitDNA.Pool264	TS2	TS2	Saliva	2	TS	30	White	Male	Meat	No	NA	NA	NA	NA	Yes	11	High	No	NA	Yes	2	No	NA	19	3.7	4	6ft0	155	21
+Stewart.TS2stoolDNA.Pool264	TS2	TS2	Feces	3	TS	30	White	Male	Meat	No	NA	NA	NA	NA	Yes	11	High	No	NA	Yes	2	No	NA	19	3.7	4	6ft0	155	21
+Stewart.TS2swabDNA.Pool264	TS2	TS2	Buccal Swab	1	TS	30	White	Male	Meat	No	NA	NA	NA	NA	Yes	11	High	No	NA	Yes	2	No	NA	19	3.7	4	6ft0	155	21
+Stewart.TS3spitDNA.Pool264	TS3	TS3	Saliva	2	TS	34	White	Male	Meat	No	NA	NA	NA	NA	Yes	10	High	No	NA	Yes	7	No	NA	19	3.7	4	5ft11	150	20.9
+Stewart.TS3stoolDNA.Pool264	TS3	TS3	Feces	3	TS	34	White	Male	Meat	No	NA	NA	NA	NA	Yes	10	High	No	NA	Yes	7	No	NA	19	3.7	4	5ft11	150	20.9
+Stewart.TS3swabDNA.Pool264	TS3	TS3	Buccal Swab	1	TS	34	White	Male	Meat	No	NA	NA	NA	NA	Yes	10	High	No	NA	Yes	7	No	NA	19	3.7	4	5ft11	150	20.9
+Stewart.TS4spitDNA.Pool264	TS4	TS4	Saliva	2	TS	29	White	Male	Meat	No	NA	NA	NA	NA	Yes	20	High	No	NA	Yes	1	No	NA	14	3.1	1	5ft11	200	27.9
+Stewart.TS4stoolDNA.Pool264	TS4	TS4	Feces	3	TS	29	White	Male	Meat	No	NA	NA	NA	NA	Yes	20	High	No	NA	Yes	1	No	NA	14	3.1	1	5ft11	200	27.9
+Stewart.TS4swabDNA.Pool264	TS4	TS4	Buccal Swab	1	TS	29	White	Male	Meat	No	NA	NA	NA	NA	Yes	20	High	No	NA	Yes	1	No	NA	14	3.1	1	5ft11	200	27.9
+Stewart.TS5spitDNA.Pool264	TS5	TS5	Saliva	2	TS	47	Black	Male	Meat	No	NA	NA	NA	NA	Yes	13	High	No	NA	No	NA	No	NA	12	2.9	7	6ft1	190	25.1
+Stewart.TS5stoolDNA.Pool264	TS5	TS5	Feces	3	TS	47	Black	Male	Meat	No	NA	NA	NA	NA	Yes	13	High	No	NA	No	NA	No	NA	12	2.9	7	6ft1	190	25.1
+Stewart.TS5swabDNA.Pool264	TS5	TS5	Buccal Swab	1	TS	47	Black	Male	Meat	No	NA	NA	NA	NA	Yes	13	High	No	NA	No	NA	No	NA	12	2.9	7	6ft1	190	25.1
+Stewart.TS8spitDNA.Project10	TS8	TS8	Saliva	2	TS	28	White	Male	Meat	No	NA	NA	NA	NA	Yes	15	High	No	NA	No	NA	No	NA	14	4	5	5ft10	170	24.4
+Stewart.TS8stoolDNA.Project10	TS8	TS8	Feces	3	TS	28	White	Male	Meat	No	NA	NA	NA	NA	Yes	15	High	No	NA	No	NA	No	NA	14	4	5	5ft10	170	24.4
+Stewart.TS8swabDNA.Project10	TS8	TS8	Buccal Swab	1	TS	28	White	Male	Meat	No	NA	NA	NA	NA	Yes	15	High	No	NA	No	NA	No	NA	14	4	5	5ft10	170	24.4
+Stewart.TS9spitDNA.Project12.Integrated	TS9	TS9	Saliva	2	TS	48	Black	Male	Meat	No	NA	NA	NA	NA	Yes	15	High	Yes	0.25	Yes	0.5	No	NA	18	3.5	5	5ft7	150	23.5
+Stewart.TS9stoolDNA.Project12.Integrated	TS9	TS9	Feces	3	TS	48	Black	Male	Meat	No	NA	NA	NA	NA	Yes	15	High	Yes	0.25	Yes	0.5	No	NA	18	3.5	5	5ft7	150	23.5
+Stewart.TS9swabDNA.Project12.Integrated	TS9	TS9	Buccal Swab	1	TS	48	Black	Male	Meat	No	NA	NA	NA	NA	Yes	15	High	Yes	0.25	Yes	0.5	No	NA	18	3.5	5	5ft7	150	23.5
