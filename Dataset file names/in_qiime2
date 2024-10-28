@@ -18,7 +18,7 @@
 14- SILVA trained (515-806 nb) taxonomy file            taxonomy.qza                               /data/smoking_uk
 15- taxonomy file to visualize                          taxonomy.qzv                               /data/smoking_uk
 16- taxanomy barplots in qiime2 (to visualize)          taxa-bar-plots.qzv                         /data/smoking_uk
-17- filtered out eukaryotic genome before rarefaction  table-no-mitochondria-no-chloroplast.qza   /data/smoking_uk
+17- filtered out eukaryotic genome before rarefaction   table-no-mitochondria-no-chloroplast.qza   /data/smoking_uk
 18- visualize the above                                 table-no-mitochondria-no-chloroplast.qzv   /data/smoking_uk
 19- phylogenetic diversity rooted tree                  rooted-tree.qza                            /data/smoking_uk
 20- phylogenetic diversity unrooted tree                unrooted-tree.qza                          /data/smoking_uk
