@@ -7,5 +7,5 @@
 -   For Ritu: Does the modelling look ok and could you help me figure out how to adjust the height please?
 
 **Notes on the proposal**
--   A lot of changes suggessted for the introduction
+-   A lot of changes suggested for the introduction
 -   Also for the research question/hypothesis/title, we may need to rework this?
