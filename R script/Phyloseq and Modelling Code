@@ -142,8 +142,7 @@ result$Factor =  c("SampleType", "Age", "Race", "Gender", "Diet", "Ecig", "Tobac
 View(result)
 
 #filter the results table to only include significant variables with a pvalue<0.05
-
-result_filtered_Padjust = subset(result, Padjust < 0.05)#Write solution here
+result_filtered_Padjust = subset(result, Padjust < 0.05)
 
 #####Saving######
 save(result, file = "Modelling_result.Rdata")
