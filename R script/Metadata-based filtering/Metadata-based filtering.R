@@ -1,5 +1,5 @@
-##metadata-based filtering after deciding that our project will focus on comparing the fecal microbiome or tobacco smokers vs non-smokers
-##filtering parameters based on the phyloseq object generated during the modelling process which showed only 1 vegetarian, 1 vegan and the rest of the participants consuming meat; 2 females and the rest male
+#metadata-based filtering after deciding that our project will focus on comparing the fecal microbiome or tobacco smokers vs non-smokers
+#filtering parameters based on the phyloseq object generated during the modelling process which showed only 1 vegetarian, 1 vegan and the rest of the participants consuming meat; 2 females and the rest male
 #BMI filtered based on guidelines for a healthy and overweight adult BMI (18.5-29.9)
 
 #load libraries
