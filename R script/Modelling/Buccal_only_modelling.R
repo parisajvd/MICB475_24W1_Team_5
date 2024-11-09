@@ -134,11 +134,6 @@ result$Factor =  c("Age", "Race", "Gender", "Diet", "Ecig", "Tobacco", "Nicotine
 #Create another column with variable names
 View(result)
 
-###############################PLOTTING
-
-#Try and generate the plot yourself using ggplot.
-#Here is a skeleton of the plotting code. I wrote "FILLOUT" where information needs to be added.
-
 #Also, filter the results table to only include significant variables with a pvalue<0.05
 
 result_filtered_Padjust = subset(result, Padjust < 0.05)#Write solution here
