@@ -1,4 +1,4 @@
-#Indicator Genera Analysis using the metadata-based filtering phyloseq object to determine ASVs and genera that are unique to tobacco smokers or non-smokers 
+#Indicator Genera Analysis using the metadata-based filtering phyloseq object to determine ASVs and genera that are unique to tobacco smokers or non-smokers, then to visualize as a summary table and bar plot 
 #scoring ASVs on prevalence and abundance
 
 #load libraries 
