@@ -1,0 +1,5 @@
+"","ASV","s.No","s.Yes","index","stat","p.value","Domain","Phylum","Class","Order","Family","Genus","Species"
+"1","7a3090aa682623800304aca0da51c22c",1,0,1,0.654653670707977,0.02,"d__Bacteria","p__Firmicutes","c__Bacilli","o__Erysipelotrichales","f__Erysipelotrichaceae","g__Faecalitalea","s__uncultured_organism"
+"2","26c6e3ed14694582e207478c1f23c21f",1,0,1,0.737667722487082,0.03,"d__Bacteria","p__Firmicutes","c__Bacilli","o__Erysipelotrichales","f__Erysipelotrichaceae","g__Turicibacter",NA
+"3","39c746e6698d4935484f50bf45508965",1,0,1,0.744620938791299,0.04,"d__Bacteria","p__Firmicutes","c__Clostridia","o__Oscillospirales","f__Oscillospiraceae","g__NK4A214_group","s__uncultured_organism"
+"4","675c847bccbc53942ebb7b8cbb4efc4d",0,1,2,0.761146507745094,0.01,"d__Bacteria","p__Bacteroidota","c__Bacteroidia","o__Bacteroidales","f__Prevotellaceae","g__Prevotella",NA
