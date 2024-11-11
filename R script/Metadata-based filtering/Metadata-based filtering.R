@@ -7,7 +7,7 @@ library(phyloseq)
 library(dplyr)
 
 #load taxonomy-based and feature-based filtered fecal sample phyloseq object from Modeling (Aim 1)
-load("R script/Modelling/fecal_samples_phyloseq.Rdata")
+load("../Modelling/fecal_samples_phyloseq.Rdata")
 
 #filter phyloseq object to contain only samples from participants with a BMI between 18.5 and 29.9 (Healthy and Overweight samples), those whose diet is meat, and males
 mpt_filtered_phyloseq <- mpt_final %>%
@@ -23,5 +23,5 @@ no_height_metadata <- no_height_metadata %>%
 sample_data(mpt_filtered_phyloseq) <- no_height_metadata
 
 #save metadata-based filter phyloseq as .RData file
-save(mpt_filtered_phyloseq, file = "R script/Metadata-based filtering/metadata-based_filtered_phyloseq.RData")
+save(mpt_filtered_phyloseq, file = "metadata-based_filtered_phyloseq.RData")
 
