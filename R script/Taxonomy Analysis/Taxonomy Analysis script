@@ -1,0 +1,80 @@
+#load libraries
+library(phyloseq)
+library(dplyr)
+library(ape)
+library(tidyverse)
+library(vegan)
+library(ggplot2)
+
+#load in files. here, we are going to rarefy the filterd phyloseq object.
+load("metadata-based_filtered_phyloseq.Rdata")
+
+# Let's first view components of phyloseq object with the following commands
+otu_table(mpt_filtered_phyloseq)
+sample_data(mpt_filtered_phyloseq)
+tax_table(mpt_filtered_phyloseq)
+phy_tree(mpt_filtered_phyloseq)
+
+#Rarefy samples to a depth of 12000. We changed this after we removed non_bacterial sequences, removed ASVs with fewer than 5 counts, and and pruned samples with less than 100 reads.
+rarecurve(t(as.data.frame(otu_table(mpt_filtered_phyloseq))), cex=0.1)
+mpt_rare_2<- rarefy_even_depth(mpt_filtered_phyloseq, rngseed = 1, sample.size = 12000)
+
+# How many samples do we have?
+nsamples(mpt_rare_2)
+
+#Save rarefied phyloseq object
+save(mpt_rare_2, file="mpt_rare_2_fecal.RData")
+
+#### Taxonomy bar plots ####
+
+# Plot bar plot of taxonomy. Shows the absolute number
+#We will first do phylum and then genus
+plot_bar(mpt_rare_2, fill="Phylum") 
+
+# Convert to relative abundance instead of the absolute number
+mpt_RA <- transform_sample_counts(mpt_rare_2, function(x) x/sum(x))
+
+# To remove black bars, "glom" by Genus first. Group Phylum together
+#NArm=TRUE removes NAs.
+mpt_phylum <- tax_glom(mpt_RA, taxrank = "Phylum", NArm=FALSE)
+
+#create a bar plot based on genus, facet data based on subject. This can make reading the plot easier.
+#sclaes="free_x" axis doesn't need to be reconciled so they can be separate.
+plot_bar(mpt_phylum, fill="Phylum")+
+  facet_wrap(.~Tobacco, scales = "free_x")
+
+#save as a plot
+gg_taxa_phylum <- plot_bar(mpt_phylum, fill="Phylum")+
+  facet_wrap(.~Tobacco, scales = "free_x")
+gg_taxa_phylum
+
+#save to computer
+ggsave("plot_taxonomy_phylum.png"
+       , gg_taxa_phylum
+       , height=8, width =12)
+
+#Now let's do Genus level.
+# Plot bar plot of taxonomy. Shows the absolute number
+plot_bar(mpt_rare_2, fill="Genus") 
+
+# Convert to relative abundance instead of the absolute number
+mpt_RA_genus <- transform_sample_counts(mpt_rare_2, function(x) x/sum(x))
+
+# To remove black bars, "glom" by Genus first. Group Genus together
+#NArm=TRUE removes NAs.
+mpt_genus <- tax_glom(mpt_RA_genus, taxrank = "Genus", NArm=FALSE)
+
+#create a bar plot based on genus, facet data based on subject. This can make reading the plot easier.
+#sclaes="free_x" axis doesn't need to be reconciled so they can be separate.
+plot_bar(mpt_genus, fill= "Genus")+
+  facet_wrap(.~Tobacco, scales = "free_x")
+
+#save as a plot
+gg_taxa_genus <- plot_bar(mpt_genus, fill="Genus")+
+  facet_wrap(.~Tobacco, scales = "free_x")
+gg_taxa_genus
+
+#save to computer
+ggsave("plot_taxonomy_genus.png"
+       , gg_taxa_genus
+       , height=30, width =40)
