@@ -22,7 +22,7 @@ ggplot(res) +
 
 #color by whether it is significant and has a large fold change
 vol_plot <- res %>%
-  mutate(significant = padj<0.01 & abs(log2FoldChange)>2) %>%
+  mutate(significant = padj<0.05 & abs(log2FoldChange)>2) %>%
   ggplot() +
   geom_point(aes(x=log2FoldChange, y=-log10(padj), col=significant))
 vol_plot
@@ -32,7 +32,7 @@ ggsave(filename="vol_plot.png",vol_plot)
 
 # To get table of results
 sigASVs <- res %>% 
-  filter(padj<0.01 & abs(log2FoldChange)>2) %>%
+  filter(padj<0.05 & abs(log2FoldChange)>2) %>%
   dplyr::rename(ASV=row)
 View(sigASVs)
 
