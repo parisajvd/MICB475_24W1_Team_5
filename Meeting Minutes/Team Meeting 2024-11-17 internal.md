@@ -1,3 +1,7 @@
+# Links to shared Google doc and slides for the draft manuscript, and presentation:
+- Draft Manuscript: https://docs.google.com/document/d/1ficVf-3JglDJB60fi0lDy3zMUniguFdnaf9AXPkAeMo/edit?tab=t.0
+- 2024-11-22 meeting presentation: https://docs.google.com/presentation/d/1M0-2-cZqUso1gHC1aZEmNixnxrNG9UIhkUna8_c7evA/edit#slide=id.p
+- Final Presentation slides: https://docs.google.com/presentation/d/1QawH4_1Buof1sx9_vuSUgmVq-7R3pFdRbBB_hd9Re4k/edit#slide=id.p
 # Results of Diversity analyses
 - Florrie: DEseq2: compares which ASVs are upregulated in tobacco users vs non-users.
   -   Volcano plot: Blue is significant (Florrie has plotted both p-values 0.01 and 0.05). Fold change greater than 0, upregulated, less than 0, downregulated. The corners are most significantly different -> to look at the relative abundance.
@@ -11,6 +15,6 @@ Maybe this would be good for the start of the paper. But then further in the pap
 - Raychal: Indicator genera analysis: genera that could be indicative of tobacco vs non-smokers based on the ASVs. 4 that were classified as non-smoking vs tobacco (shown in a table). The first 3 in non-tobacco,  Last one in the table was for tobacco smokers.
   - Bar graph: height is the stat -> closer to 1 means it is more associated with one group than the other. Tobacco-associated one is the most significant. Protevella genus is the one that can indicate the tobacco smoker!
   - Maybe stick to p-value of 0.05 for all of the analysis.
-
+    
 -  Parisa: Taxonomy / taxabar plot analysis: When resolved to genus level, the barplot gets a bit complicated and messy. But looks like we have more of the purple color genra in tobacco smokers vs non. -> associated with Protevella again! As taxabar plots are to accompany DEseq, this might still be useful, maybe need to narrow down the genus, or just make the graph visually better with ggplot
   - Also resolved to phylum level -> doesn't look too different between tobacco vs non, might not be the most useful for our paper because all other analyses are resolving to genus level.
