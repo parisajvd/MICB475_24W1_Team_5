@@ -1,5 +1,5 @@
 # Links to shared Google doc and slides for the draft manuscript, and presentation:
-- Draft Manuscript: https://docs.google.com/document/d/1ficVf-3JglDJB60fi0lDy3zMUniguFdnaf9AXPkAeMo/edit?tab=t.0
+- Draft Manuscript with UJEMI template: https://docs.google.com/document/d/1vg8QdnlTivP1_xcHmLFIgIlrTgb4gtlY6ua70fbLcCU/edit?usp=sharing
 - 2024-11-22 meeting presentation: https://docs.google.com/presentation/d/1M0-2-cZqUso1gHC1aZEmNixnxrNG9UIhkUna8_c7evA/edit#slide=id.p
 - Final Presentation slides: https://docs.google.com/presentation/d/1QawH4_1Buof1sx9_vuSUgmVq-7R3pFdRbBB_hd9Re4k/edit#slide=id.p
 # Results of Diversity analyses
