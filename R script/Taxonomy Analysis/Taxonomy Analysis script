@@ -36,7 +36,7 @@ mpt_RA <- transform_sample_counts(mpt_rare_2, function(x) x/sum(x))
 
 # To remove black bars, "glom" by Genus first. Group Phylum together
 #NArm=TRUE removes NAs.
-mpt_phylum <- tax_glom(mpt_RA, taxrank = "Phylum", NArm=FALSE)
+mpt_phylum <- tax_glom(mpt_RA, taxrank = "Phylum", NArm=TRUE)
 
 #create a bar plot based on genus, facet data based on subject. This can make reading the plot easier.
 #sclaes="free_x" axis doesn't need to be reconciled so they can be separate.
@@ -62,7 +62,7 @@ mpt_RA_genus <- transform_sample_counts(mpt_rare_2, function(x) x/sum(x))
 
 # To remove black bars, "glom" by Genus first. Group Genus together
 #NArm=TRUE removes NAs.
-mpt_genus <- tax_glom(mpt_RA_genus, taxrank = "Genus", NArm=FALSE)
+mpt_genus <- tax_glom(mpt_RA_genus, taxrank = "Genus", NArm=TRUE)
 
 #create a bar plot based on genus, facet data based on subject. This can make reading the plot easier.
 #sclaes="free_x" axis doesn't need to be reconciled so they can be separate.
