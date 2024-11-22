@@ -13,7 +13,12 @@
 - Picrust: this shows everything, not just fecal. Abundance data as well as the metadata filtering for fecal -> maybe use qiime2 to filter
 - Z more associated (red). Yes vs no
 - Our data is very abundance-driven, maybe functional analysis is not the most meaningful -> use Network plot from Hans group, how these abundances affect the interactions with each other. Links them together -> can use phyloseq object for fecal (has everything we need). Circle plot and nodes
-- If we don't figured the network analysis out, maybe go with the picrust
+- If we don't figure the network analysis out, maybe go with the picrust
 - For the network/coordination diagrams: maybe do it on phylum/genus level
 - In paper: discuss fecal quite a bit, abundance changes is the main thing.
 - Check the literature to see why fecal is changing more than oral.
+
+  # Presentation notes:
+  - Titles should be descriptive for each of the results (not just like: beta diversity)
+  - For the analyses that are not the main part of the course, try to put enough info for them on the slides.
+  - Keep the slides simple. Include enough just to tell the story. 
