@@ -30,7 +30,7 @@ isa_final <- isa_mpt$sign %>%
 #save summary table as csv file
 write.csv(isa_final, file = "indicator_genera_analysis.csv", row.names = TRUE)
 
-#### Bar Plot Visualization ####
+#### Bar Plot Visualization of statistically significant genera ####
 #reorder the Genus factor based on the 'stat' variable in ascending order
 isa_final$Genus <- factor(isa_final$Genus, levels = isa_final$Genus[order(isa_final$stat, decreasing = FALSE)])
 
@@ -47,3 +47,8 @@ indicator_genera_plot <- ggplot(isa_final, aes(x = Genus, y = stat, fill = Genus
 
 #save the bar graph
 ggsave(indicator_genera_plot, file = "indicator_genera_analysis_plot.png", width = 8, height = 7)
+
+#filter for indicator value significance (stat > 0.8) 
+isa_final_stat <- isa_final %>%
+    filter(stat>0.8)
+#no genera are both statistically significant and indicator value significant as indicators 
