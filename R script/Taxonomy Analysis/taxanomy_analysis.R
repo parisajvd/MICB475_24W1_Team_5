@@ -7,7 +7,7 @@ library(vegan)
 library(ggplot2)
 
 #load in files. here, we are going to rarefy the filterd phyloseq object.
-load("metadata-based_filtered_phyloseq.Rdata")
+load("../Metadata-based filtering/metadata-based_filtered_phyloseq.RData")
 
 # Let's first view components of phyloseq object with the following commands
 otu_table(mpt_filtered_phyloseq)
