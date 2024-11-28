@@ -54,38 +54,41 @@ ggsave("plot_taxonomy_phylum.png"
        , height=8, width =12)
 
 #Now let's do Genus level.
-# Plot bar plot of taxonomy. Shows the absolute number
-plot_bar(mpt_rare_2, fill="Genus") 
+# Step 1: Convert to relative abundance
+mpt_RA_genus <- transform_sample_counts(mpt_rare_2, function(x) x / sum(x))
 
-# Convert to relative abundance instead of the absolute number
-mpt_RA_genus <- transform_sample_counts(mpt_rare_2, function(x) x/sum(x))
+# Step 2: Glom by Genus (grouping by Genus level)
+mpt_genus <- tax_glom(mpt_RA_genus, taxrank = "Genus", NArm = TRUE)
 
-# To remove black bars, "glom" by Genus first. Group Genus together
-#NArm=TRUE removes NAs.
-mpt_genus <- tax_glom(mpt_RA_genus, taxrank = "Genus", NArm=TRUE)
+# Step 3: Filter out genera with a relative abundance of less than 1%
+# 1% = 0.01 in relative abundance
+filter_threshold <- 0.01
 
-#create a bar plot based on genus, facet data based on subject. This can make reading the plot easier.
-#sclaes="free_x" axis doesn't need to be reconciled so they can be separate.
-plot_bar(mpt_genus, fill= "Genus")+
-  facet_wrap(.~Tobacco, scales = "free_x")
+# Calculate the mean relative abundance across all samples for each genus
+genus_means <- apply(otu_table(mpt_genus), 1, mean)
 
-#save as a plot
-gg_taxa_genus <- plot_bar(mpt_genus, fill = "Genus") +
+# Identify taxa to keep: those with mean relative abundance >= 1%
+taxa_to_keep <- names(genus_means[genus_means >= filter_threshold])
+
+# Subset the data to retain only those genera
+mpt_filtered_genus <- prune_taxa(taxa_to_keep, mpt_genus)
+
+# Step 4: Plot the filtered bar plot
+gg_taxa_genus_2 <- plot_bar(mpt_filtered_genus, fill = "Genus") +
   facet_wrap(. ~ Tobacco, scales = "free_x") +
   theme(
-    strip.text = element_text(size = 25),      # Increase facet label size
-    legend.text = element_text(size = 17),     # Increase legend text size
-    legend.title = element_text(size = 20),    # Increase legend title size
+    strip.text = element_text(size = 30),      # Increase facet label size
+    legend.text = element_text(size = 30),     # Increase legend text size
+    legend.title = element_text(size = 30),    # Increase legend title size
     legend.key.size = unit(1.5, "cm"),         # Adjust legend key size
-    axis.title.x = element_text(size = 20),    # Increase x-axis title size
-    axis.title.y = element_text(size = 20),    # Increase y-axis title size
-    axis.text.x = element_text(size = 20),     # Increase x-axis tick text size
-    axis.text.y = element_text(size = 20)      # Increase y-axis tick text size
+    axis.title.x = element_text(size = 30),    # Increase x-axis title size
+    axis.title.y = element_text(size = 30),    # Increase y-axis title size
+    axis.text.x = element_text(size = 30),     # Increase x-axis tick text size
+    axis.text.y = element_text(size = 30)      # Increase y-axis tick text size
   ) +
-  guides(fill = guide_legend(ncol = 4))        # Stack legend vertically
-gg_taxa_genus
+  guides(fill = guide_legend(ncol = 1))        # Stack legend vertically
 
 #save to computer
-ggsave("plot_taxonomy_genus.png"
-       , gg_taxa_genus
+ggsave("plot_taxonomy_genus_filtered.png"
+       , gg_taxa_genus_2
        , height=30, width =40)
