@@ -70,8 +70,19 @@ plot_bar(mpt_genus, fill= "Genus")+
   facet_wrap(.~Tobacco, scales = "free_x")
 
 #save as a plot
-gg_taxa_genus <- plot_bar(mpt_genus, fill="Genus")+
-  facet_wrap(.~Tobacco, scales = "free_x")
+gg_taxa_genus <- plot_bar(mpt_genus, fill = "Genus") +
+  facet_wrap(. ~ Tobacco, scales = "free_x") +
+  theme(
+    strip.text = element_text(size = 25),      # Increase facet label size
+    legend.text = element_text(size = 17),     # Increase legend text size
+    legend.title = element_text(size = 20),    # Increase legend title size
+    legend.key.size = unit(1.5, "cm"),         # Adjust legend key size
+    axis.title.x = element_text(size = 20),    # Increase x-axis title size
+    axis.title.y = element_text(size = 20),    # Increase y-axis title size
+    axis.text.x = element_text(size = 20),     # Increase x-axis tick text size
+    axis.text.y = element_text(size = 20)      # Increase y-axis tick text size
+  ) +
+  guides(fill = guide_legend(ncol = 4))        # Stack legend vertically
 gg_taxa_genus
 
 #save to computer
