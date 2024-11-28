@@ -7,10 +7,10 @@
 
 
 *Need to assign parts for presentation slides - Due Dec 2nd
-    - Title:
-    - Intro and Background:
-    - Research Objective and Hypothesis:
-    - Results section: each do our own
-    - Summary of Conclusions:
-    - Future Directions:
-    - References: all 
+- Title:
+- Intro and Background:
+- Research Objective and Hypothesis:
+- Results section: each do our own
+- Summary of Conclusions:
+- Future Directions:
+- References: all 
