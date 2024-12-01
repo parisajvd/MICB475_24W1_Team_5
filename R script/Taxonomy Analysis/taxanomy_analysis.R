@@ -49,10 +49,10 @@ gg_taxa_phylum <- plot_bar(mpt_phylum, fill="Phylum")+
 gg_taxa_phylum
 
 #save to computer
-ggsave("plot_taxonomy_phylum.png"
-       , gg_taxa_phylum
-       , height=8, width =12)
-
+gg_taxa_phylum <- plot_bar(mpt_phylum, fill="Phylum") +
+  facet_wrap(.~Tobacco, scales = "free_x") +
+  ylab("Relative Abundance")
+gg_taxa_phylum
                                   
 #Now let's do Genus level.
 # Step 1: Convert to relative abundance
