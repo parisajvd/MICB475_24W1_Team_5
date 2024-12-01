@@ -44,8 +44,9 @@ plot_bar(mpt_phylum, fill="Phylum")+
   facet_wrap(.~Tobacco, scales = "free_x")
 
 #save as a plot
-gg_taxa_phylum <- plot_bar(mpt_phylum, fill="Phylum")+
-  facet_wrap(.~Tobacco, scales = "free_x")
+gg_taxa_phylum <- plot_bar(mpt_phylum, fill="Phylum") +
+  facet_wrap(.~Tobacco, scales = "free_x") +
+  ylab("Relative Abundance")
 gg_taxa_phylum
 
 #save to computer
