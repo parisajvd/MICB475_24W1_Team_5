@@ -11,7 +11,7 @@
 - for alpha diversity: say that it is not significant on the slide (put p-values as well)
 - Tobacco yes/no in beta diversity
 - Taxabarplot: remove the text underneath
-- Changes in differential changes are associated with Tobacco
+- For deseq slide: Changes in differential abundance are associated with Tobacco
 - Comparison groups for volcano plot (define yes and no)
 - Node plot: no first, yes second, yes -> tobacco smoking
 - Decrease in interactions between the firmicutes phyla
