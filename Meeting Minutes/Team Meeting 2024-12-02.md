@@ -11,14 +11,14 @@
 - for alpha diversity: say that it is not significant on the slide (put p-values as well)
 - Tobacco yes/no in beta diversity
 - Taxabarplot: remove the text underneath
-- For deseq slide: Changes in differential abundance are associated with Tobacco
+- For deseq2 slide: Changes in differential abundance are associated with Tobacco
 - Comparison groups for volcano plot (define yes and no)
 - Node plot: no first, yes second, yes -> tobacco smoking
 - Decrease in interactions between the firmicutes phyla
-- Coord diagram shows similar
-- Manuscript: include all 4, but for presentation only include the dot diagram only. Put more context in here because this is new. Say what the connections mean. Interactions change based on the changes in the abundance. The size of the nodes represents abundance, individual nodes show the genus. Changes in the abundance links them together
-- 1 conclusion per analysis
+- Coord diagram shows similar results as the dot diagram
+- Manuscript: include all 4 (co-occurrence and dot diagram), but for presentation only include the dot diagram. Put more context in here because this is new. Say what the connections mean. Interactions change based on the changes in the abundance. The size of the nodes represents abundance, individual nodes show the genus. Changes in the abundance links them together
+- 1 conclusion per analysis in the presentation
 - Maybe highlight (bold, underline) the trends you really wanna emphasize on.
 - Future directions: having a larger cohort, and studying in different locations.
-- For discussion: fewer firmicutes interactions and if there is anything in literature
-- Supplemental figures 
+- For discussion in the paper: fewer firmicutes interactions and if there is anything in literature
+- Supplemental figures: if you are gonna talk about it in the discussion, can include methods in supplemental as well. You can talk about supplemental data in the discussion of the paper!
