@@ -12,27 +12,20 @@ library(ggplot2)
 
 #Load in the metadata,  OTU table, taxonomy file, and phylogenetic tree
 
-metafp <- "uk_metadata.tsv"
+metafp <- "Fecal sample modelling/uk_metadata.tsv"
 meta <- read_delim(metafp, delim="\t")
 class(meta)
 
-#Reformat Height column to be in solely inches, this did not work so far, need to troubleshoot.
+fecal_meta <- filter(meta, SampleType == "Feces")
 
-#meta_new <- (separate(meta, col="Height", sep="ft", into = c("Feet", "Inches")))
-#meta_new2 <- (as.numeric(as.character(unlist(meta_new, "Feet"[1]))) %>% as.numeric(unlist(meta, "Inches")))
- 
-#meta_new$TotalHeight = as.numeric(meta_new$Feet * 12) + as.numeric(meta_new*Inches)
- 
-#(mutate(meta_new2, "Feet"*12) %>% unite(meta_new2, Height_corrected = (`Feet` + `Inches`))
-
-otufp <- "feature-table.txt"
+otufp <- "Fecal sample modelling/feature-table.txt"
 otu <- read_delim(file = otufp, delim="\t", skip=1)
 
-taxfp <- "taxonomy.tsv"
+taxfp <- "Fecal sample modelling/taxonomy.tsv"
 tax <- read_delim(taxfp, delim="\t")
 
-phylotreefp <- "tree.nwk"
-phylotree <- read.tree(phylotreefp)
+phylotreefp <- "Fecal sample modelling/tree.nwk"
+phylotree <- read_tree(phylotreefp)
 
 #Adjust files to be read into a phyloseq object. Make the phyloseq object.
 
@@ -46,9 +39,9 @@ class(OTU)
 
 #### Format sample metadata ####
 # Save everything except sampleid as new data frame
-samp_df <- as.data.frame(meta[,-1])
+samp_df <- as.data.frame(fecal_meta[,-1])
 # Make sampleids the rownames
-rownames(samp_df)<- meta$'sample-id'
+rownames(samp_df)<- fecal_meta$'sample-id'
 # Make phyloseq sample data with sample_data() function
 SAMP <- sample_data(samp_df)
 class(SAMP)
@@ -80,14 +73,16 @@ mpt_filt_nolow <- filter_taxa(mpt_filt, function(x) sum(x)>5, prune = TRUE)
 #Filter to remove samples with fewer than 100 reads
 mpt_final <- prune_samples(sample_sums(mpt_filt)>100, mpt_filt_nolow)
 
+save(mpt_final, file="Fecal sample modelling/fecal_samples_phyloseq.Rdata")
+
 #Rarefy samples to a depth of 20034.
 rarecurve(t(as.data.frame(otu_table(mpt_final))), cex=0.1)
-mpt_rare <- rarefy_even_depth(mpt_final, rngseed = 1, sample.size = 20034)
+mpt_rare <- rarefy_even_depth(mpt_final, rngseed = 1, sample.size = 15000)
 
-#14 samples removed due to rarefaction, 101 OTUs no lonfer in any sample after random subsampling.
+#2 samples removed due to rarefaction, 280 OTUs no lonfer in any sample after random subsampling.
 
 #Save rarefied phyloseq object
-save(mpt_rare, file="mpt_rare.RData")
+save(mpt_rare, file="Fecal sample modelling/mpt_rare_fecal.RData")
 
 ###Preparing the modelling table###
 
@@ -101,7 +96,7 @@ meta_df <- data.frame(meta)
 
 #Filter the metadata to remove columns that are not relevant
 
-meta_filt <- meta_df [, c("SampleType", "Age", "Race", "Gender", "Diet", "Ecig", "Tobacco", "Nicotine", "Marijuana", 
+meta_filt <- meta_df [, c("Age", "Race", "Gender", "Diet", "Ecig", "Tobacco", "Nicotine", "Marijuana", 
                           "Alcohol","CO_ppm", "CO_percent", "Weight", "BMI")] 
 
 MF = colnames(meta_filt)
@@ -136,14 +131,15 @@ rownames(result) = c(MF)   #Convert the rowmanes to variables
 colnames(result) = c("R2", "Pvalue")#Change the column names TO "R2" AND "Pvalue"
 result = data.frame(result, stringsAsFactors = F) #Convert it to a data.frame (easiest to work with when plotting)
 result$Padjust = p.adjust(result$Pvalue, method = "fdr") #Generate an adjusted pvalue to correct for the probability of false positives
-result$Factor =  c("SampleType", "Age", "Race", "Gender", "Diet", "Ecig", "Tobacco", "Nicotine", "Marijuana", 
+result$Factor =  c("Age", "Race", "Gender", "Diet", "Ecig", "Tobacco", "Nicotine", "Marijuana", 
                    "Alcohol","CO_ppm", "CO_percent", "Weight", "BMI")
-                   #Create another column with variable names
+#Create another column with variable names
 View(result)
 
-#filter the results table to only include significant variables with a pvalue<0.05
-result_filtered_Padjust = subset(result, Padjust < 0.05)
+
+result_filtered_Padjust = subset(result, Padjust < 0.05)#Write solution here
 
 #####Saving######
-save(result, file = "Modelling_result.Rdata")
-save(result_filtered_Padjust, file = "Modelling_result_filtered.Rdata")
+save(result, file = "Fecal sample modelling/Modelling_result_fecal.Rdata")
+save(result_filtered_Padjust, file = "Fecal sample modelling/Modelling_result_filtered_fecal.Rdata")
+

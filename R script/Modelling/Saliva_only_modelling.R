@@ -12,19 +12,19 @@ library(ggplot2)
 
 #Load in the metadata,  OTU table, taxonomy file, and phylogenetic tree
 
-metafp <- "uk_metadata.tsv"
+metafp <- "Modelling/uk_metadata.tsv"
 meta <- read_delim(metafp, delim="\t")
 class(meta)
 
 saliva_meta <- filter(meta, SampleType == "Saliva")
 
-otufp <- "feature-table.txt"
+otufp <- "Modelling/feature-table.txt"
 otu <- read_delim(file = otufp, delim="\t", skip=1)
 
-taxfp <- "taxonomy.tsv"
+taxfp <- "Modelling/taxonomy.tsv"
 tax <- read_delim(taxfp, delim="\t")
 
-phylotreefp <- "tree.nwk"
+phylotreefp <- "Modelling/tree.nwk"
 phylotree <- read_tree(phylotreefp)
 
 #Adjust files to be read into a phyloseq object. Make the phyloseq object.
@@ -80,7 +80,7 @@ mpt_rare <- rarefy_even_depth(mpt_final, rngseed = 1, sample.size = 25000)
 #2 samples removed due to rarefaction, 610 OTUs no lonfer in any sample after random subsampling.
 
 #Save rarefied phyloseq object
-save(mpt_rare, file="mpt_rare_saliva.RData")
+save(Modelling/mpt_rare, file="mpt_rare_saliva.RData")
 
 ###Preparing the modelling table###
 
@@ -134,11 +134,9 @@ result$Factor =  c("Age", "Race", "Gender", "Diet", "Ecig", "Tobacco", "Nicotine
 #Create another column with variable names
 View(result)
 
-#Also, filter the results table to only include significant variables with a pvalue<0.05
-
 result_filtered_Padjust = subset(result, Padjust < 0.05)#Write solution here
 
 #####Saving######
-save(result, file = "Modelling_result_saliva.Rdata")
-save(result_filtered_Padjust, file = "Modelling_result_filtered_saliva.Rdata")
+save(result, file = "Modelling/Modelling_result_saliva.Rdata")
+save(result_filtered_Padjust, file = "Modelling/Modelling_result_filtered_saliva.Rdata")
 
