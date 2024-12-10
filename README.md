@@ -1,4 +1,5 @@
 # MICB475_24W1_Team_5
+## Raychal Ng, Monica Leca, Samantha Tang, Parisa Javadian, Florrie Sui
 
 Hello! This is Team 5's GitHub respository, guiding you through how our research evolved over UBC Winter 2024 Term 1! This respository contains our QIIME2 script, R script codes, meeting minutes and links to some sources that we found to be valuable for our research project. 
 
