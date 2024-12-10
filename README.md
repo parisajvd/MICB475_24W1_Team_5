@@ -11,10 +11,10 @@ https://github.com/parisajvd/MICB475_24W1_Team_5/tree/0cccc0b340b83f801baea7f1e4
 ### 2. Meeting Minutes
 https://github.com/parisajvd/MICB475_24W1_Team_5/tree/0cccc0b340b83f801baea7f1e403e9af46e58603/Meeting%20Minutes
 - This folder contains our meeting minutes, including the agenda, notes taken during the meeting, and feedback from Evelyn and our TA
-### 3. QIIME2 Scripts
+### 3. QIIME2 Script
 https://github.com/parisajvd/MICB475_24W1_Team_5/tree/0cccc0b340b83f801baea7f1e403e9af46e58603/QIIME2%20Scripts
 - This folder contains our QIIME2 script that was used for our initial proposal to demultiplex, denoise and cluster our dataset. 
-### 4. R script
+### 4. R Scripts
 https://github.com/parisajvd/MICB475_24W1_Team_5/tree/0cccc0b340b83f801baea7f1e403e9af46e58603/R%20script
 - This folder contains our extensive R scripts, separated by each analysis that was conducted. Outputs from QIIME2 such as our taxonomy files, feature table, and metadata can also be located here.
 - The specific analyses that you can find scripts for include:
