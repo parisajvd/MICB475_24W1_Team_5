@@ -25,7 +25,8 @@ https://github.com/parisajvd/MICB475_24W1_Team_5/tree/0cccc0b340b83f801baea7f1e4
   - Taxabar plots
   - DESeq2 analysis
   - Indicator Genera Analysis
-  - PICRUSt2 - co-occurence and chord interaction diagrams
+  - Co-occurence diagrams
+  - Chord interaction diagrams
 ### 5. Research
 https://github.com/parisajvd/MICB475_24W1_Team_5/tree/0cccc0b340b83f801baea7f1e403e9af46e58603/Research
 - This folder contains a document that has useful articles linked which focus on past literature surrounding the gut microbiome and tobacco smoking. 
