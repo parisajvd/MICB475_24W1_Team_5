@@ -7,7 +7,7 @@ library(vegan)
 library(ggplot2)
 
 #### Load in RData ####
-load("Alpha:beta diversity/metadata-based_filtered_phyloseq.RData")
+load("../Metadata-based filtering/metadata-based_filtered_phyloseq.RData")
 
 rarecurve(t(as.data.frame(otu_table(mpt_filtered_phyloseq))), cex=0.1)
 mpt_filtered_rare <- rarefy_even_depth(mpt_filtered_phyloseq, rngseed = 1, sample.size = 12000)
