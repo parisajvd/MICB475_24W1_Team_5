@@ -4,7 +4,7 @@ library(phyloseq)
 library(DESeq2)
 
 #load metadata filtered phyloseq object
-load("~/Desktop/MICB 475 R/metadata-based_filtered_phyloseq.RData")
+load("../Metadata-based filtering/metadata-based_filtered_phyloseq.RData")
 
 #convert phyloseq to deseq
 mpt_deseq <- phyloseq_to_deseq2(mpt_filtered_phyloseq, ~`Tobacco`)
