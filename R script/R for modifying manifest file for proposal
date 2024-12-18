@@ -27,4 +27,4 @@ manifest <- manifest |>
 colnames(manifest) <- c("sample-id", "forward-absolute-filepath", "reverse-absolute-filepath")
 
 # Write the modified manifest back to a .tsv file
-write.table(manifest, file = "uk_manifest_latest.tsv", sep = "\t", row.names = FALSE, quote = FALSE)
+write.table(manifest, file = "../QIIME2 Scripts/uk_manifest_latest.tsv", sep = "\t", row.names = FALSE, quote = FALSE)
