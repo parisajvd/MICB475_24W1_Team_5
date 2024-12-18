@@ -2,7 +2,7 @@
 library(dplyr)
 
 # Read the tab-separated manifest file
-manifest <- read.delim("uk_manifest_edited.tsv", stringsAsFactors = FALSE)
+manifest <- read.delim("../QIIME2 Scripts/uk_manifest.tsv", stringsAsFactors = FALSE)
 
 # Replace the paths in the relevant columns
 manifest$forward.absolute.filepath <- gsub(
