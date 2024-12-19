@@ -7,7 +7,7 @@ library(viridisLite)
 library(RColorBrewer)
 library(dplyr)
 
-load("~/Desktop/MICB475/metadata-based_filtered_phyloseq (2).RData")
+load("../Metadata-based filtering/metadata-based_filtered_phyloseq.RData")
 
 # Step 0: Filter to include only samples with 'Tobacco' equal to 'No/Yes'
 tobacco_no <- subset_samples(mpt_filtered_phyloseq, Tobacco == "No")
