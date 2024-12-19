@@ -5,6 +5,30 @@ library(igraph)
 library(circlize)
 library(dplyr)
 
+load("../Metadata-based filtering/metadata-based_filtered_phyloseq.RData")
+
+# Step 0: Filter to include only samples with 'Tobacco' equal to 'No/Yes'
+tobacco_no <- subset_samples(mpt_filtered_phyloseq, Tobacco == "No")
+tobacco_yes <- subset_samples(mpt_filtered_phyloseq, Tobacco == "Yes")
+
+
+# Filter by genus with a minimum abundance threshold
+filter_by_genus <- function(physeq_obj, min_count = 1, min_samples = 1) {
+  # Aggregate to genus level
+  physeq_genus <- tax_glom(physeq_obj, taxrank = "Genus")
+  
+  # Remove low-abundance genera
+  physeq_genus <- prune_taxa(taxa_sums(physeq_genus) > min_count, physeq_genus)
+  
+  # Keep only genera that appear in at least 'min_samples' samples
+  physeq_genus <- filter_taxa(physeq_genus, function(x) sum(x > 0) >= min_samples, prune = TRUE)
+  
+  return(physeq_genus)
+}
+
+# Filter the dataset at the genus level using the function above
+tobacco_no_filtered <- filter_by_genus(tobacco_no)
+
 
 # Step 1: Generate the SpiecEasi network
 set.seed(42)
