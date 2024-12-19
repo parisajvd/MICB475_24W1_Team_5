@@ -12,17 +12,17 @@ library(ggplot2)
 
 #Load in the metadata,  OTU table, taxonomy file, and phylogenetic tree
 
-metafp <- "Fecal sample modelling/uk_metadata.tsv"
+metafp <- "Modelling/uk_metadata.tsv"
 meta <- read_delim(metafp, delim="\t")
 class(meta)
 
-otufp <- "Fecal sample modelling/feature-table.txt"
+otufp <- "Modelling/feature-table.txt"
 otu <- read_delim(file = otufp, delim="\t", skip=1)
 
-taxfp <- "Fecal sample modelling/taxonomy.tsv"
+taxfp <- "Modelling/taxonomy.tsv"
 tax <- read_delim(taxfp, delim="\t")
 
-phylotreefp <- "Fecal sample modelling/tree.nwk"
+phylotreefp <- "Modelling/tree.nwk"
 phylotree <- read.tree(phylotreefp)
 
 #Adjust files to be read into a phyloseq object. Make the phyloseq object.
@@ -78,7 +78,7 @@ mpt_rare <- rarefy_even_depth(mpt_final, rngseed = 1, sample.size = 20034)
 #14 samples removed due to rarefaction, 101 OTUs no lonfer in any sample after random subsampling.
 
 #Save rarefied phyloseq object
-save(mpt_rare, file="Fecal sample modelling/mpt_rare.RData")
+save(mpt_rare, file="Modelling/mpt_rare.RData")
 
 ###Preparing the modelling table###
 
@@ -137,5 +137,5 @@ View(result)
 result_filtered_Padjust = subset(result, Padjust < 0.05)#Write solution here
 
 #####Saving######
-save(result, file = "Fecal sample modelling/Modelling_result.Rdata")
-save(result_filtered_Padjust, file = "Fecal sample modelling/Modelling_result_filtered.Rdata")
+save(result, file = "Modelling/Modelling_result.Rdata")
+save(result_filtered_Padjust, file = "Mdelling/Modelling_result_filtered.Rdata")
