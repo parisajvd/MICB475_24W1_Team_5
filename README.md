@@ -1,7 +1,7 @@
 # MICB475_24W1_Team_5
-## Raychal Ng, Monica Leca, Samantha Tang, Parisa Javadian, Florrie Sui
+## Parisa Javadian, Monica Leca, Raychal Ng, Florrie Sui, Samantha Tang 
 
-Hello! This is Team 5's GitHub respository, guiding you through how our research evolved over UBC Winter 2024 Term 1! This respository contains our QIIME2 script, R script codes, meeting minutes and links to some sources that we found to be valuable for our research project. 
+Hello! This is Team 5's GitHub repository, guiding you through how our research evolved over UBC Winter 2024 Term 1! This repository contains our QIIME2 script, R script codes, meeting minutes and links to some sources that we found to be valuable for our research project. 
 
 Our research was centered around using a modeling algorithm to identify any lifestyle and/or demographic factors that significantly altered the oral (saliva and buccal swabs) or gut microbiome (fecal samples) of tobacco smokers and e-cigarette smokers compared to non-smoker controls. Then, we further investigated the fecal samples to see how tobacco smoking may be associated with changes to the taxonomic microbial profile. The dataset used in this research was obtained from Stewart et al. (2018): https://doi.org/10.7717/peerj.4693
 
